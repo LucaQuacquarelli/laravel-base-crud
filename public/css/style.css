@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 10px;
+    background-color: mediumaquamarine;
+    color: white;
+    cursor: pointer;
+}
+
+p {
+    margin: 10px 0;
+}
+
+.comic {
+    margin: 20px 0;
+}
+
+.page {
+    padding: 10px;
+    background-color: lightskyblue;
+}
+
+.page ul {
+    list-style: none;
+}
+
+.page li {
+    display: inline-block;
+}
