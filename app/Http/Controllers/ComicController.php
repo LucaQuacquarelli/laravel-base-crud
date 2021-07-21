@@ -42,7 +42,7 @@ class ComicController extends Controller
         $comic->save();
         return redirect()
             ->route('comics.show', $comic->id)
-            ->with('message', "Nuovo fumetto '" . $comic->title . "' creato correttamente");;
+            ->with('message', "Nuovo fumetto '" . $comic->title . "' creato correttamente");
     }
 
     /**
@@ -51,16 +51,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        $comic = Comic::find($id);
-
-        if ($comic) {
-            return view('comics.show', compact('comic'));
-        }
-
-        abort(404);
-
+        return view("comics.show", compact('comic'));
     }
 
     /**
@@ -69,9 +62,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        return view("comics.edit", compact('comic'));
     }
 
     /**
@@ -81,9 +74,13 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+        $comic->update($data);
+        return redirect()
+            ->route('comics.show', $comic->id)
+            ->with('message', "Fumetto '" . $comic->title . "' modificato correttamente");
     }
 
     /**
