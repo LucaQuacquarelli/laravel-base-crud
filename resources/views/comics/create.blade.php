@@ -18,6 +18,6 @@
         <input type="text" placeholder="Inserisci la data d'uscita del fumetto" id="sale_date" name="sale_date" required>
         <label for="type"><strong>Tipo</strong></label>
         <input type="text" placeholder="Inserisci il tipo del fumetto" id="type" name="type" required>
-        <button type="submit" class="btn">Salva</button>
+        <button type="submit" class="btn btn-show">Save</button>
     </form>
 @endsection

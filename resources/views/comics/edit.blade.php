@@ -19,6 +19,7 @@
         <input type="text" placeholder="Inserisci la data d'uscita del fumetto" id="sale_date" name="sale_date" required value="{{$comic->sale_date}}">
         <label for="type"><strong>Tipo</strong></label>
         <input type="text" placeholder="Inserisci il tipo del fumetto" id="type" name="type" required value="{{$comic->type}}">
-        <button type="submit" class="btn">Salva</button>
+        <button type="submit" class="btn btn-show">SAVE</button>
+        <a href="{{route('comics.show', $comic->id)}}" class="btn btn-edit">CANCEL</a>
     </form>
 @endsection
