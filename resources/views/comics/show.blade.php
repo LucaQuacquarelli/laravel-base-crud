@@ -2,6 +2,11 @@
 
 @section('comics-main')
 <div class="comic">
+    @if (session('message'))
+        <div class="notify">
+            {{ session('message') }}
+        </div>
+    @endif
     <h2>{{$comic->title}}</h2>
     <img src="{{$comic->cover}}" alt="cover">
     <p>{{$comic->description}}</p>
